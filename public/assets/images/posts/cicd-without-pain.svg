@@ -1,0 +1,16 @@
+<svg width="800" height="480" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-cicd" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#84a59d"/>
+      <stop offset="100%" stop-color="#f6a6b2"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" rx="32" fill="url(#grad-cicd)"/>
+  <path d="M140 240h140l40-80 80 160 40-80h120" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" fill="none"/>
+  <circle cx="180" cy="240" r="18" fill="#fff" opacity="0.6"/>
+  <circle cx="320" cy="160" r="18" fill="#fff" opacity="0.6"/>
+  <circle cx="400" cy="320" r="18" fill="#fff" opacity="0.6"/>
+  <circle cx="520" cy="240" r="18" fill="#fff" opacity="0.6"/>
+  <text x="60" y="120" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="44" font-weight="600" fill="#2f2d2f">CI/CD без боли</text>
+  <text x="60" y="165" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="24" fill="#2f2d2f">GitHub Actions · Terraform · ChatOps</text>
+</svg>

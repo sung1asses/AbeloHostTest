@@ -1,0 +1,16 @@
+<svg width="800" height="480" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-incident" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffd1da"/>
+      <stop offset="100%" stop-color="#a3c4f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" rx="32" fill="url(#grad-incident)"/>
+  <path d="M160 340c40-120 80-120 120 0s80 120 120 0 80-120 120 0 80 120 120 0" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity="0.5"/>
+  <circle cx="220" cy="320" r="20" fill="#fff" opacity="0.6"/>
+  <circle cx="360" cy="200" r="20" fill="#fff" opacity="0.6"/>
+  <circle cx="500" cy="300" r="20" fill="#fff" opacity="0.6"/>
+  <circle cx="640" cy="180" r="20" fill="#fff" opacity="0.6"/>
+  <text x="60" y="120" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="44" font-weight="600" fill="#2f2d2f">Incident Stories</text>
+  <text x="60" y="165" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="24" fill="#2f2d2f">Post-mortems that teach</text>
+</svg>

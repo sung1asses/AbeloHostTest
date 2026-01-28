@@ -40,6 +40,7 @@ class BlogService
                 'title' => $post['title'],
                 'excerpt' => $post['description'],
                 'slug' => $post['slug'],
+                'image' => $post['image'] ?? null,
                 'views' => (int) $post['views'],
                 'published_at' => $post['published_at'],
             ];

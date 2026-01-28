@@ -1,0 +1,13 @@
+<svg width="800" height="480" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-cloud-infra" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6a6b2"/>
+      <stop offset="100%" stop-color="#a3c4f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#grad-cloud-infra)" rx="32"/>
+  <circle cx="620" cy="120" r="60" fill="rgba(255,255,255,0.25)"/>
+  <circle cx="640" cy="320" r="140" fill="rgba(255,255,255,0.12)"/>
+  <text x="60" y="190" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="48" font-weight="600" fill="#2f2d2f">Cloud Infrastructure</text>
+  <text x="60" y="250" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="26" fill="#2f2d2f">Kubernetes rollout checklist</text>
+</svg>

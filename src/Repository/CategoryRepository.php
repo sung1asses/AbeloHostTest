@@ -85,7 +85,7 @@ class CategoryRepository
         $total = (int) $countStmt->fetchColumn();
 
         $sql = <<<SQL
-        SELECT p.id, p.title, p.slug, p.description, p.views, p.published_at
+        SELECT p.id, p.title, p.slug, p.description, p.image, p.views, p.published_at
         FROM category_post cp
         INNER JOIN posts p ON p.id = cp.post_id
         WHERE cp.category_id = :categoryId

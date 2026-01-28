@@ -9,6 +9,11 @@
             <span>Просмотры: {$post.views}</span>
             <span>Опубликовано: {$post.published_at}</span>
         </div>
+        {if $post.image}
+            <div class="post-hero">
+                <img src="{$post.image}" alt="{$post.title}">
+            </div>
+        {/if}
     </header>
 
     <div class="content">

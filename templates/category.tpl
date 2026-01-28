@@ -23,15 +23,22 @@
 <section class="article-list">
     {foreach $articles as $article}
         <article class="article-card">
-            <h2>
-                <a href="{$baseUrl}/post?slug={$article.slug}">{$article.title}</a>
-            </h2>
-            <p>{$article.excerpt}</p>
-            <div class="meta">
-                <span>Просмотры: {$article.views}</span>
-                <span>Опубликовано: {$article.published_at}</span>
+            {if $article.image}
+                <div class="cover">
+                    <img src="{$article.image}" alt="{$article.title}" loading="lazy">
+                </div>
+            {/if}
+            <div class="article-body">
+                <h2>
+                    <a href="{$baseUrl}/post?slug={$article.slug}">{$article.title}</a>
+                </h2>
+                <p>{$article.excerpt}</p>
+                <div class="meta">
+                    <span>Просмотры: {$article.views}</span>
+                    <span>Опубликовано: {$article.published_at}</span>
+                </div>
+                <a class="ghost-btn" href="{$baseUrl}/post?slug={$article.slug}">Читать статью</a>
             </div>
-            <a class="ghost-btn" href="{$baseUrl}/post?slug={$article.slug}">Читать статью</a>
         </article>
     {/foreach}
 </section>

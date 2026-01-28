@@ -1,0 +1,16 @@
+<svg width="800" height="480" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-runbook" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6a6b2"/>
+      <stop offset="100%" stop-color="#f8f1f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" rx="32" fill="url(#grad-runbook)"/>
+  <rect x="160" y="100" width="480" height="280" rx="28" fill="rgba(255,255,255,0.45)"/>
+  <line x1="200" y1="160" x2="600" y2="160" stroke="#2f2d2f" stroke-width="8" opacity="0.35" stroke-linecap="round"/>
+  <line x1="200" y1="210" x2="560" y2="210" stroke="#2f2d2f" stroke-width="8" opacity="0.35" stroke-linecap="round"/>
+  <line x1="200" y1="260" x2="560" y2="260" stroke="#2f2d2f" stroke-width="8" opacity="0.35" stroke-linecap="round"/>
+  <text x="220" y="325" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="26" fill="#2f2d2f" opacity="0.7">Escalation · Owner · SLO</text>
+  <text x="60" y="420" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="42" font-weight="600" fill="#2f2d2f">Runbook Design</text>
+  <text x="60" y="460" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="24" fill="#2f2d2f">Recovery within minutes</text>
+</svg>

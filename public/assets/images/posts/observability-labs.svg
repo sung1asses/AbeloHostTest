@@ -1,0 +1,15 @@
+<svg width="800" height="480" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-observability" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f6a6b2"/>
+      <stop offset="100%" stop-color="#84a59d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" rx="32" fill="url(#grad-observability)"/>
+  <polyline points="100,360 180,240 260,260 340,180 420,220 500,140 580,180 660,120 740,160" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+  <circle cx="180" cy="240" r="14" fill="#fff" opacity="0.6"/>
+  <circle cx="340" cy="180" r="14" fill="#fff" opacity="0.6"/>
+  <circle cx="500" cy="140" r="14" fill="#fff" opacity="0.6"/>
+  <text x="60" y="120" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="42" font-weight="600" fill="#2f2d2f">Observability Labs</text>
+  <text x="60" y="165" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="24" fill="#2f2d2f">Логи · Метрики · Трейсы</text>
+</svg>

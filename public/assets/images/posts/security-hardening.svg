@@ -1,0 +1,14 @@
+<svg width="800" height="480" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-security" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffd1da"/>
+      <stop offset="100%" stop-color="#a3c4f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" rx="32" fill="url(#grad-security)"/>
+  <path d="M400 110l170 60v90c0 95-75 160-170 200-95-40-170-105-170-200v-90z" fill="rgba(255,255,255,0.45)"/>
+  <circle cx="400" cy="240" r="70" fill="none" stroke="#2f2d2f" stroke-width="12" opacity="0.6"/>
+  <path d="M400 200v60l32 18" stroke="#2f2d2f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" fill="none"/>
+  <text x="60" y="80" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="40" font-weight="600" fill="#2f2d2f">Security Hardening</text>
+  <text x="60" y="120" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="22" fill="#2f2d2f">Docker · Kubernetes · mTLS</text>
+</svg>

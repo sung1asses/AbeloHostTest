@@ -1,0 +1,15 @@
+<svg width="800" height="480" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-advanced-nginx" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a3c4f3"/>
+      <stop offset="100%" stop-color="#f6d365"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#grad-advanced-nginx)" rx="32"/>
+  <rect x="120" y="110" width="560" height="260" rx="24" fill="rgba(255,255,255,0.28)"/>
+  <rect x="160" y="150" width="200" height="40" rx="20" fill="#fff" opacity="0.5"/>
+  <rect x="160" y="210" width="360" height="40" rx="20" fill="#fff" opacity="0.35"/>
+  <rect x="160" y="270" width="280" height="40" rx="20" fill="#fff" opacity="0.2"/>
+  <text x="60" y="390" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="44" font-weight="600" fill="#2f2d2f">Advanced Nginx</text>
+  <text x="60" y="430" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="22" fill="#2f2d2f">Workers, caching and mTLS</text>
+</svg>
