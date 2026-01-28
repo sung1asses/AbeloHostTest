@@ -1,0 +1,5 @@
+vendor/
+.env
+.env.local
+.idea/
+start.sh
