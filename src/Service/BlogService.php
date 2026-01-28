@@ -34,6 +34,10 @@ class BlogService
         $result = $this->categories->getPostsForCategory($category->getId(), $sort, $page, $this->perPage);
 
         $totalPages = max(1, (int) ceil($result['total'] / $this->perPage));
+        if ($page > $totalPages) {
+            $page = $totalPages;
+            $result = $this->categories->getPostsForCategory($category->getId(), $sort, $page, $this->perPage);
+        }
 
         $articles = array_map(static function (array $post): array {
             return [
@@ -59,6 +63,10 @@ class BlogService
             'pagination' => [
                 'current' => $page,
                 'total' => $totalPages,
+                'has_prev' => $page > 1,
+                'has_next' => $page < $totalPages,
+                'prev' => max(1, $page - 1),
+                'next' => min($totalPages, $page + 1),
             ],
         ];
     }

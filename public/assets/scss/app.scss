@@ -176,6 +176,10 @@ a {
 }
 
 .category-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
   header {
     margin-bottom: 1rem;
   }
@@ -187,6 +191,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 0.65rem;
+    flex: 1;
   }
 
   li {
@@ -203,6 +208,11 @@ a {
 
   li a {
     color: $text;
+  }
+
+  .btn {
+    margin-top: auto;
+    align-self: flex-start;
   }
 }
 
@@ -249,7 +259,45 @@ a {
   }
 }
 
+.pagination {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(132, 165, 157, 0.3);
+  border-radius: 16px;
+  background: rgba($accent, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  p {
+    margin: 0;
+    font-weight: 600;
+    color: $text;
+  }
+
+  .pager-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .pager-btn {
+    min-width: 140px;
+    justify-content: center;
+  }
+
+  .pager-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
 .post {
+  margin-bottom: 2.5rem;
+
   header {
     display: flex;
     flex-direction: column;

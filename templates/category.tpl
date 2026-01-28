@@ -45,5 +45,18 @@
 
 <section class="pagination">
     <p>Страница {$pagination.current} из {$pagination.total}</p>
+    <div class="pager-controls">
+        {if $pagination.has_prev}
+            <a class="ghost-btn pager-btn" href="{$baseUrl}/category?slug={$category.slug}&sort={$filters.current}&page={$pagination.prev}">← Назад</a>
+        {else}
+            <span class="ghost-btn pager-btn disabled" aria-disabled="true">← Назад</span>
+        {/if}
+
+        {if $pagination.has_next}
+            <a class="btn pager-btn" href="{$baseUrl}/category?slug={$category.slug}&sort={$filters.current}&page={$pagination.next}">Вперёд →</a>
+        {else}
+            <span class="btn pager-btn disabled" aria-disabled="true">Вперёд →</span>
+        {/if}
+    </div>
 </section>
 {/block}
