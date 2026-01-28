@@ -26,3 +26,94 @@
    ```
    docker compose exec php bash
    ```
+
+6. Пока находитесь внутри контейнера, установите npm (нужен для сборки SCSS):
+
+   ```
+   apt update && apt install -y npm
+   ```
+
+## Этап 2. Скелет приложения
+
+Этот этап добавляет MVC-структуру, подключает Smarty и подготавливает директории для CSS/SCSS/JS.
+
+1. Установите зависимости и сгенерируйте автозагрузку:
+
+   ```
+   docker compose exec php composer install
+   ```
+
+2. Структура src теперь содержит контроллеры и базовую инфраструктуру (`App\Core`).
+3. Шаблоны размещены в `templates/`, общие части — в `templates/partials/`, а публичные ассеты — в `public/assets/` (есть SCSS и готовый CSS).
+4. Основная точка входа `public/index.php` поднимает конфиги, инициализирует Smarty и маршруты из `routes/web.php`.
+5. Файл `.env` дополнен переменной `PAGINATION_PER_PAGE`, пути к шаблонам и кешам хранятся в `config/app.php`.
+6. Проверить, что скелет работает, можно, открыв [http://abelohost.test](http://abelohost.test) — увидите базовую верстку и заглушечные данные.
+
+## Этап 3. Домейн, БД и сидеры
+
+1. Добавлены модели (`src/Model`), репозитории (`src/Repository`) и сервис `BlogService`, который общается с MySQL через PDO.
+2. `public/index.php` теперь поднимает подключение, собирает сервисы и прокидывает их в контроллеры.
+3. В `database/schema.sql` описана структура таблиц (`categories`, `posts`, `category_post`).
+4. Скрипт `bin/seed.php` пересоздаёт таблицы и заполняет тестовыми данными. Запустить можно так:
+
+   ```
+   docker compose exec php php bin/seed.php
+   ```
+
+5. После сидирования откройте [http://abelohost.test](http://abelohost.test) — данные будут подгружены из MySQL (главная, категория с пагинацией и сортировкой, страница статьи с похожими постами).
+
+## Компиляция SCSS
+
+Пользовательские стили пишутся в `public/assets/scss/app.scss`, а рабочий CSS лежит в `public/assets/css/app.css`. Чтобы пересобрать стили:
+
+1. Установите CLI Dart Sass (подойдёт глобальная установка через npm):
+
+   ```
+   npm install -g sass
+   ```
+
+   Если удобнее, выполните установку внутри PHP-контейнера (`docker compose exec php bash`) и поставьте Sass там же.
+
+2. Одна сборка:
+
+   ```
+   sass public/assets/scss/app.scss public/assets/css/app.css
+   ```
+
+3. Режим наблюдения во время разработки:
+
+   ```
+   sass --watch public/assets/scss/app.scss:public/assets/css/app.css
+   ```
+
+Команда читает SCSS и перезаписывает CSS, поэтому держите файл под версионным контролем, чтобы отслеживать изменения.
+
+## Сборка для продакшена
+
+Чтобы получить продовый билд, выполните следующие шаги:
+
+1. Установите зависимости без dev-пакетов и с оптимизацией автозагрузки (команда запускается внутри PHP-контейнера):
+
+   ```
+   docker compose exec php composer install --no-dev --optimize-autoloader
+   ```
+
+2. Скомпилируйте SCSS в минифицированный CSS (можно добавить `--no-source-map`, если не нужен source map):
+
+   ```
+   sass --style=compressed public/assets/scss/app.scss public/assets/css/app.css
+   ```
+
+3. По желанию очистите кеш Smarty перед выкладкой, чтобы получить чистые шаблоны:
+
+   ```
+   rm -rf storage/smarty/cache/* storage/smarty/compiled/*
+   ```
+
+4. Пересоберите и перезапустите контейнеры, чтобы убедиться, что используется актуальный код и ассеты:
+
+   ```
+   docker compose up -d --build
+   ```
+
+После этих шагов в каталоге `public/` будут лежать актуальные минифицированные стили, а приложение будет готово к запуску в продакшене.

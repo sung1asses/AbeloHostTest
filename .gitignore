@@ -1,5 +1,11 @@
 vendor/
+storage/smarty/cache/*
+storage/smarty/compile/*
+storage/logs/*.log
+var/
+node_modules/
 .env
 .env.local
 .idea/
+.DS_Store
 start.sh
