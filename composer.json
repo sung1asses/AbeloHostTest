@@ -1,0 +1,24 @@
+{
+    "name": "abelohost/blog",
+    "description": "Simple MVC blog skeleton on pure PHP + Smarty",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "smarty/smarty": "^4.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@php -r \"if (!is_dir('storage/smarty/cache')) { mkdir('storage/smarty/cache', 0777, true); }\"",
+            "@php -r \"if (!is_dir('storage/smarty/compile')) { mkdir('storage/smarty/compile', 0777, true); }\""
+        ],
+        "post-update-cmd": [
+            "@php -r \"if (!is_dir('storage/smarty/cache')) { mkdir('storage/smarty/cache', 0777, true); }\"",
+            "@php -r \"if (!is_dir('storage/smarty/compile')) { mkdir('storage/smarty/compile', 0777, true); }\""
+        ]
+    }
+}
