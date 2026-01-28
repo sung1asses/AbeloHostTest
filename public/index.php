@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Core\Config;
 use App\Core\Env;
+use App\Core\Logger;
 use App\Core\Router;
 use App\Core\View;
 use App\Database\Connection;
@@ -21,6 +22,8 @@ $view = new View($config['paths']);
 $view->share('app', $config['app']);
 $view->share('baseUrl', $config['app']['url']);
 $view->breadcrumbs([]);
+
+$logger = new Logger($config['paths']['logs'] . '/app.log');
 
 $pdo = Connection::make($config['db']);
 $categoryRepository = new CategoryRepository($pdo);
@@ -45,6 +48,10 @@ try {
 		]);
 	}
 } catch (\InvalidArgumentException $exception) {
+	$logger->warning('Invalid argument exception', [
+		'error' => $exception->getMessage(),
+		'path' => $_SERVER['REQUEST_URI'] ?? '',
+	]);
 	http_response_code(404);
 	$view->display('error.tpl', [
 		'code' => 404,
@@ -52,6 +59,10 @@ try {
 		'message' => $exception->getMessage(),
 	]);
 } catch (\Throwable $exception) {
+	$logger->error('Unhandled exception', [
+		'error' => $exception->getMessage(),
+		'path' => $_SERVER['REQUEST_URI'] ?? '',
+	]);
 	http_response_code(500);
 	$message = Config::get('app.env') === 'local' && Config::get('app.debug', false)
 		? $exception->getMessage()
