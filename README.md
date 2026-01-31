@@ -1,4 +1,5 @@
 # AbeloHost Blog
+<img width="1799" height="1427" alt="image" src="https://github.com/user-attachments/assets/12dfa391-33a7-4557-b34a-fed7c4adc9d0" />
 
 ## Этап 1. Docker окружение
 
